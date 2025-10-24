@@ -9,7 +9,9 @@ const products = await getCollection("products");
     {
         products.map((product) => (
             <li>
-                <ProductCard product={product.data} />
+                <a href={`/products/${product.data.id}`}>
+                    <ProductCard product={product.data} />
+                </a>
             </li>
         ))
     }
@@ -28,5 +30,4 @@ const products = await getCollection("products");
     li {
         margin: 0;
     }
-    
 </style>
